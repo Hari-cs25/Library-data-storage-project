@@ -1,0 +1,152 @@
+*{
+    text-align:center;
+    display:block;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    min-height:0px;
+    min-width:0px;
+}
+
+
+h1{
+   
+   border-top:3px solid purple;
+   border-right:3px solid purple;
+   border-left:3px solid purple;
+    color:blue;
+}
+.outercontainer{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+.container{
+    border:2px solid rgb(253, 138, 23);
+    width:500px;
+    height:auto;
+    margin:auto;
+    padding:10px;
+    position:relative;
+}
+.seccontainer{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+   /* border:1px solid red;*/
+}
+.seccontainer > button{
+    background-color:rgb(216, 216, 216);
+    color:black;
+    padding:10px 5px;
+    width:80px;
+}
+.formcontainer{
+   position:absolute;
+    height:auto;
+    top:20px;
+    left:40px;
+    right:40px;
+    bottom:80px;
+    height:230px;
+    background-color:rgba(195, 194, 194, 0.9); 
+    border-radius:2px;
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgb(134, 134, 134);
+
+}
+.formbtncontainer{
+    /*border:1px solid black;*/
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+input{
+    margin:10px;
+    padding:5px;
+    padding-left:4px;
+    border:1px solid rgb(12, 12, 12);
+     text-align:left;
+}
+::placeholder{
+ text-align:left;
+ font-family:italyc;
+ font-weight:bold;
+ color:rgb(33, 32, 39);
+}
+.bl{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+.bl>div{
+    border:2px solid purple;
+}
+.bookbtncontainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+button{
+    padding:5px 0px;
+    width:80px;
+    margin:10px; 
+    font-size:10px;
+    border:none;
+    border-radius:3px;
+    color:rgb(255, 255, 255);
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{
+    opacity:0.8;
+}
+button:active{
+    transform:scale(0.97);
+}
+.removebtn{
+    background-color:rgb(243, 34, 34);
+}
+.readstatusbtn{
+    background-color:green;
+}
+.submitbtn, 
+.cancelbtn{
+    background-color:rgb(201, 201, 201);
+    color:black;
+    
+    font-style:oblique;
+    font-weight:bold;
+}
+.submitbtn{
+    background-color:rgb(52, 52, 255);
+    color:white;
+}
+.cancelbtn{
+    background-color:red;
+    color:white;
+}
+label{
+    display:inline-block;
+   /* border:1px solid green;*/
+    text-align:left;
+    padding-left:11px;
+    font-family:italyc;
+    font-weight:bold;
+    color:rgb(33, 32, 39);
+    font-size:14px;
+}
+option{
+    font-family:italyc;
+    font-weight:bold;
+    color:rgb(33, 32, 39);
+    font-size:14px;
+}
+select{
+        display:inline-block;
+        font-family:italyc;
+        font-weight:bold;
+        color:rgb(33, 32, 39);
+        font-size:13px;
+}
