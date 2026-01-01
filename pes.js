@@ -1,23 +1,30 @@
 let myLibrary = [];
 let deleteStack = [];
 let objectName;
-function Book(title, author, pages, read) {
-     if(read === 'reader')
-        read = 'Readed';
-    else if(read === 'not reader')
-        read = 'Not Readed';
-this.title = title;
-this.author = author;
-this.pages = pages;
-this.read = read;
+class Book {
+
+    constructor (title, author, pages, read){
+        read=read.toUpperCase();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = (read.toUpperCase());
+    }
+    status(){
+        console.log('status->',this.read);
+    }
+
 };
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 310, "not readed");
+
 const container = document.querySelector('.container');
 const bookList = document.querySelector('.bl');
 console.log('checking: ', bookList);
 
 function addBookToLibrary(objectName,title, author, pages, read){
+    read = read.toUpperCase();
     objectName = new Book(title, author, pages, read);
+    objectName.status();
+    console.log('read status->',objectName.read);
     myLibrary.push(objectName);
     //DOM manipulation
     let bkbuttoncontainer = document.createElement('div');
@@ -33,25 +40,22 @@ function addBookToLibrary(objectName,title, author, pages, read){
     btn1.className = 'removebtn';
     btn2.className = 'readstatusbtn';
     btn1.textContent = 'Remove Book';
-    if(read === 'reader')
-        read = 'Readed';
-    else if(read === 'not reader')
-        read = 'Not Readed';
+    if(read === 'READED')
+        read = 'READED';
+    else if(read === 'NOT READED')
+        read = 'NOT READED';
     btn2.textContent = read;
     btn2.addEventListener('click', function(){
         //alert('clicked');
-        if(objectName.read === 'Readed'){
-            objectName.read = 'Not Readed';
-            btn2.textContent = 'Not Readed';
+        if(objectName.read === 'READED'){
+            btn2.textContent = 'NOT READED';
+            objectName.read = btn2.textContent;
         }
         else{
-            objectName.read = 'Readed';
-            btn2.textContent = 'Readed';
+            btn2.textContent = 'READED';
+            objectName.read = btn2.textContent;
         }
-        if(btn2.textContent === 'Not Readed')
-            btn2.textContent = 'Readed';
-        else
-            btn2.textContent = 'Not Readed';
+           
     });
 
      btn1.addEventListener('click', function(){
@@ -70,9 +74,6 @@ function addBookToLibrary(objectName,title, author, pages, read){
 
     const secdiv = document.createElement('div');
     container.appendChild(secdiv);
-   /* const titlefeild = document.createElement('input');
-    secdiv.appendChild(titlefeild);
-    titlefeild.setAttribute('placeholder' , 'Enter Book Title')*/
 }
 
  const outercontainer = document.querySelector('.outercontainer');
@@ -173,6 +174,4 @@ function addBookToLibrary(objectName,title, author, pages, read){
 
 addBookToLibrary('book1','Harry potter', 'Hari phishp', 908, 'Readed');
 addBookToLibrary('book2', 'The Alchemist' , 'paulo coelho' , 678 , 'Not Readed');
-addBookToLibrary('book3', 'The Hobbit', 'J.R.R. Tolkien', 310, 'not readed');
-addBookToLibrary('book3', 'The Hobbit', 'J.R.R. Tolkien', 310, 'not readed');
 
